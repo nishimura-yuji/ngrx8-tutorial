@@ -1,0 +1,4 @@
+<form [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+  <input type="text" formControlName="text" />
+  <button [disabled]="form.invalid">Add</button>
+</form>

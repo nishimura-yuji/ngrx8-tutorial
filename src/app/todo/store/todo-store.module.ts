@@ -5,14 +5,12 @@ import * as fromTodo from './';
 import { EffectsModule } from '@ngrx/effects';
 import { TodoEffects } from './todo.effects';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducers, { metaReducers: fromTodo.metaReducers }),
-    EffectsModule.forFeature([TodoEffects])
+    // StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducers, { metaReducers: fromTodo.metaReducers }),
+    // EffectsModule.forFeature([TodoEffects])
   ]
 })
 export class TodoStoreModule { }

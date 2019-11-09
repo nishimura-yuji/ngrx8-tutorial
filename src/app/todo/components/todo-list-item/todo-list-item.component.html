@@ -1,0 +1,7 @@
+<li>
+  <form [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+    <input type="text" formControlName="text" />
+    <button [disabled]="form.invalid">Update</button>
+    <button type="button" (click)="remove.emit(todo.id)">Delete</button>
+  </form>
+</li>

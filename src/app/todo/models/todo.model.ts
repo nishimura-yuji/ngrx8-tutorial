@@ -2,7 +2,7 @@
  * Todo
  */
 export interface Todo {
-  id: string;
+  id: number;
   text: string;
   checked: boolean;
   createdAt: number;
