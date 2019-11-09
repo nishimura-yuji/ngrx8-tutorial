@@ -41,6 +41,6 @@ export class TodoService {
     const url = `${this.todosUrl}/${id}`;
     return this.http
       .delete<Todo>(url, this.httpOptions)
-      .pipe(tap(_ => console.log(`deleted hero id=${id}`)));
+      .pipe(tap(_ => console.log(`deleted todo id=${id}`)));
   }
 }
