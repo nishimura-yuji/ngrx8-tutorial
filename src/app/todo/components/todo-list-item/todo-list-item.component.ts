@@ -7,12 +7,13 @@ import { Todo } from '../../models/todo.model';
   selector: 'app-todo-list-item',
   templateUrl: './todo-list-item.component.html',
   styleUrls: ['./todo-list-item.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoListItemComponent implements OnInit {
+  @Input() loading: boolean;
   @Input() todo: Todo;
   @Output() update = new EventEmitter<Todo>();
-  @Output() remove = new EventEmitter<string>();
+  @Output() remove = new EventEmitter<number>();
 
   form: FormGroup;
 

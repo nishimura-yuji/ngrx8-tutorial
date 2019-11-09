@@ -9,8 +9,8 @@ import { TodoEffects } from './todo.effects';
   declarations: [],
   imports: [
     CommonModule,
-    // StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducers, { metaReducers: fromTodo.metaReducers }),
-    // EffectsModule.forFeature([TodoEffects])
+    StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducers, { metaReducers: fromTodo.metaReducers }),
+    EffectsModule.forFeature([TodoEffects])
   ]
 })
 export class TodoStoreModule { }

@@ -1,10 +1,12 @@
 <app-todo-form
+  [loading]="loading$ | async"
   (create)="create($event)"
 ></app-todo-form>
 <app-todo-list>
   <app-todo-list-item
     *ngFor="let todo of todos$ | async"
     [todo]="todo"
+    [loading]="loading$ | async"
     (update)="update($event)"
     (remove)="remove($event)"
   ></app-todo-list-item>

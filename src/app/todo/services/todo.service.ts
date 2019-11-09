@@ -22,7 +22,7 @@ export class TodoService {
       .pipe(tap(todos => console.log('load all todo', todos)));
   }
 
-  load(id: string) {
+  load(id: number) {
     const url = `${this.todosUrl}/${id}`;
     return this.http.get<Todo>(url, this.httpOptions);
   }

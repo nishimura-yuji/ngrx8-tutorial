@@ -1,26 +1,25 @@
 {
   "extends": "tslint:recommended",
+  "linterOptions": {
+    "exclude": [
+      "node_modules"
+    ]
+  },
+  "rulesDirectory": [
+    "codelyzer"
+  ],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
+    "arrow-return-shorthand": [true, "multiline"],
+    // "cyclomatic-complexity": [
+    //   true,
+    //   4
+    // ],
+    "no-shadowed-variable": false,
     "deprecation": {
-      "severity": "warning"
+      "severity": "warn"
     },
-    "component-class-suffix": true,
-    "contextual-lifecycle": true,
-    "directive-class-suffix": true,
-    "directive-selector": [
-      true,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ],
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -43,7 +42,9 @@
         ]
       }
     ],
-    "no-consecutive-blank-lines": false,
+    "no-consecutive-blank-lines": true,
+    "no-boolean-literal-compare": true,
+    "no-duplicate-imports": true,
     "no-console": [
       true,
       "debug",
@@ -60,6 +61,7 @@
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
+    "no-use-before-declare": true,
     "no-var-requires": false,
     "object-literal-key-quotes": [
       true,
@@ -72,20 +74,15 @@
       "single"
     ],
     "trailing-comma": false,
-    "no-conflicting-lifecycle": true,
+    "no-output-on-prefix": true,
+    "no-inputs-metadata-property": true,
+    "no-outputs-metadata-property": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
-    "no-inputs-metadata-property": true,
-    "no-output-native": true,
-    "no-output-on-prefix": true,
     "no-output-rename": true,
-    "no-outputs-metadata-property": true,
-    "template-banana-in-box": true,
-    "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
-  },
-  "rulesDirectory": [
-    "codelyzer"
-  ]
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": true,
+    "directive-class-suffix": true
+  }
 }

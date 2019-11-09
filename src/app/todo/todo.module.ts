@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoComponent } from './containers/todo/todo.component';
 import { TodoStoreModule } from './store/todo-store.module';
@@ -12,12 +11,7 @@ import { TodoFormComponent } from './components/todo-form/todo-form.component';
 
 @NgModule({
   declarations: [TodoComponent, TodoListComponent, TodoListItemComponent, TodoFormComponent],
-  imports: [
-    CommonModule,
-    TodoRoutingModule,
-    TodoStoreModule,
-    ReactiveFormsModule
-  ],
-  exports: [TodoComponent]
+  imports: [CommonModule, TodoRoutingModule, TodoStoreModule, ReactiveFormsModule],
+  exports: [TodoComponent],
 })
-export class TodoModule { }
+export class TodoModule {}
