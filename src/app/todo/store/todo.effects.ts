@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect, act } from '@ngrx/effects';
 
 import { of } from 'rxjs';
-import { map, concatMap, switchMap, catchError } from 'rxjs/operators';
+import { map, concatMap, switchMap, catchError, tap } from 'rxjs/operators';
 
 import { TodoService } from '../services/todo.service';
 import * as TodoActions from './todo.actions';
@@ -51,7 +51,7 @@ export class TodoEffects {
       ofType(TodoActions.update),
       concatMap(({ todo }) =>
         this.todoService.update(todo).pipe(
-          map(result => TodoActions.updateSuccess({ todo: result })),
+          map(_ => TodoActions.updateSuccess()),
           catchError(error => of(TodoActions.updateFailure({ error })))
         )
       )

@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     TodoModule,
     AppStoreModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false, delay: 1000 }),
   ],
   providers: [],
   bootstrap: [AppComponent],

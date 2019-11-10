@@ -6,7 +6,7 @@ import { TodoFacade } from '../../store/todo.facade';
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoComponent implements OnInit {
   loading$ = this.todoService.loading$;

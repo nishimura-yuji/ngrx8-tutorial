@@ -40,10 +40,7 @@ const todoReducer = createReducer(
   }),
   on(TodoActions.createFailure, (state, { error }) => ({ ...state, loading: false, error })),
   on(TodoActions.update, state => ({ ...state, loading: true })),
-  on(TodoActions.updateSuccess, (state, { todo }) => {
-    const todos = state.todos.map(t => (t.id === todo.id ? todo : t));
-    return { ...state, loading: false, todos };
-  }),
+  on(TodoActions.updateSuccess, state => ({ ...state, loading: false })),
   on(TodoActions.updateFailure, (state, { error }) => ({ ...state, loading: false, error })),
   on(TodoActions.remove, state => ({ ...state, loading: true })),
   on(TodoActions.removeSuccess, (state, { id }) => {

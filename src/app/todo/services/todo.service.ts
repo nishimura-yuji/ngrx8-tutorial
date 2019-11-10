@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Todo } from '../models/todo.model';
 import { tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -28,19 +27,15 @@ export class TodoService {
   }
 
   create(todo: Partial<Todo>) {
-    const url = `${this.todosUrl}`;
-    return this.http.post<Todo>(url, todo, this.httpOptions);
+    return this.http.post<Todo>(this.todosUrl, todo, this.httpOptions);
   }
 
   update(todo: Todo) {
-    const url = `${this.todosUrl}/${todo.id}`;
-    return this.http.put<Todo>(url, todo, this.httpOptions);
+    return this.http.put(this.todosUrl, todo, this.httpOptions);
   }
 
-  remove(id: number): Observable<Todo> {
+  remove(id: number) {
     const url = `${this.todosUrl}/${id}`;
-    return this.http
-      .delete<Todo>(url, this.httpOptions)
-      .pipe(tap(_ => console.log(`deleted todo id=${id}`)));
+    return this.http.delete<Todo>(url, this.httpOptions).pipe(tap(_ => console.log(`deleted todo id=${id}`)));
   }
 }

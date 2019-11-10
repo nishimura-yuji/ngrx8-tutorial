@@ -21,7 +21,7 @@ export const createFailure = createAction('[Todo API] Create Failure', props<{ e
 
 export const update = createAction('[Todo Page] Update', props<{ todo: Todo }>());
 
-export const updateSuccess = createAction('[Todo API] Update Success', props<{ todo: Todo }>());
+export const updateSuccess = createAction('[Todo API] Update Success');
 
 export const updateFailure = createAction('[Todo API] Update Failure', props<{ error: any }>());
 
